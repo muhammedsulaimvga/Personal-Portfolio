@@ -1014,6 +1014,47 @@
     <!-- Preloader -->
     <div id="preloader"></div>
 
+    <!--Form Validation-->
+    <script>
+  function validateForm() {
+    
+    const name = document.getElementById("form_name").value.trim();
+    const email = document.getElementById("email_id").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    
+    if (name === "") {
+      alert("Please enter your name");
+      return false;
+    }
+
+    
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address");
+      return false;
+    }
+
+    
+    if (subject === "") {
+      alert("Please enter the subject");
+      return false;
+    }
+
+    
+    if (message.length < 10) {
+      alert("Message must be at least 10 characters long");
+      return false;
+    }
+
+    
+    return true;
+  }
+</script>
+
     <!-- Vendor JS Files -->
     <script src="./bootstrap.bundle.min.js"></script>
     <script src="./validate.js"></script>
